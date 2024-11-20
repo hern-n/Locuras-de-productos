@@ -90,9 +90,9 @@ document.body.appendChild(productInfo);
 
 // Animación de aparición
 document.addEventListener("DOMContentLoaded", () => {
-    document.body.style.opacity = "0";  // Aparece invisible
-    document.body.style.transition = "opacity 1s"; // Añade transición
+    document.body.style.opacity = "0";
+    document.body.style.transition = "opacity 1s";
     setTimeout(() => {
-        document.body.style.opacity = "1"; // Aparece después de 1 segundo
+        document.body.style.opacity = "1";
     }, 100);
 });
