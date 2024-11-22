@@ -1,11 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="alexa.js" defer></script>
+    <title>Detalles del Producto</title>
+    <style>
+        /* Estilos base */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #a4cffa;
+            color: #333333;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* Barra de tareas */
+        .options-bar {
+            background-color: #2C3E50;
+            color: #FFFFFF;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            z-index: 1000;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .options-bar h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        /* Contenedor principal */
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 80px auto; /* Ajusta el margen superior para evitar que se solape con la barra */
+            max-width: 800px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Imagen del producto */
+        .product-image {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        /* Información del producto */
+        .product-info {
+            flex: 1;
+        }
+
+        .product-info h1 {
+            color: #333333;
+            margin: 0 0 10px;
+        }
+
+        .product-info p {
+            color: #4D4D4D;
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .product-info h2 {
+            color: #E67E22;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        /* Botón de compra */
+        .buy-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #FFFFFF;
+            background-color: #E67E22;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+        }
+
+        .buy-button:hover {
+            background-color: #D35400;
+        }
+    </style>
 </head>
 <body>
+    <!-- Barra de tareas -->
+    <div class="options-bar">
+        <h2>Detalles del Producto</h2>
+    </div>
+
+    <!-- Imagen del producto -->
+    <img class="product-image" src="imagen del producto.jpg" alt="Producto">
+        
+    <!-- Información del producto -->
+    <div class="product-info">
+        <h1>Nombre del Producto</h1>
+        <p>Aquí va la descripción detallada del producto. Explica las características y beneficios.</p>
+        <h2>€ 99.99</h2>
+        <a href="#" class="buy-button">Comprar ahora</a>
+    </div>
+
+    <script>
+        // Colores
+        const primary_color = "#2C3E50";
+        const background_color = "#a4cffa";
+
+        // Animación de aparición al cargar la página
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.style.opacity = "1";
+        });
+    </script>
 </body>
 </html>
