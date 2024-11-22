@@ -106,12 +106,13 @@
         .action-button:hover {
             background-color: #D35400;
         }
-        /* Estilo para el contenedor de productos */
+
+                /* Estilo para el contenedor de productos */
         .product-grid {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
+            justify-content: flex-start; /* Alinea los productos a la izquierda */
+            flex-wrap: wrap; /* Permite que los productos se muevan a nuevas filas cuando sea necesario */
+            gap: 20px; /* Espacio entre productos */
             margin: 40px 20px; /* Separación respecto a otros elementos */
         }
 
@@ -120,7 +121,7 @@
             text-decoration: none; /* Quita subrayado de los enlaces */
             color: var(--text-color); /* Usa el color principal del texto */
             text-align: center; /* Centra el contenido */
-            width: 200px; /* Ancho fijo para cada producto */
+            width: 18%; /* Establece el ancho a un 18% del contenedor, dejando espacio para 5 productos */
             transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación al pasar el ratón */
             border: 1px solid var(--border-color);
             border-radius: 10px;
@@ -197,6 +198,13 @@
         <!-- Producto 3 -->
         <a href="producto3.html" class="product-item">
             <img src="producto3.jpg" alt="Producto 3">
+            <h3>Producto 3</h3>
+            <p>€19.99</p>
+        </a>
+
+        <!-- Producto 4 -->
+        <a href="producto4.html" class="product-item">
+            <img src="producto3.jpg" alt="Producto 4">
             <h3>Producto 3</h3>
             <p>€19.99</p>
         </a>
