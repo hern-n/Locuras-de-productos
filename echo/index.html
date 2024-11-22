@@ -13,6 +13,7 @@
             color: #333333;
             opacity: 0;
             transition: opacity 1s ease-in-out;
+            padding-top: 80px; /* Añadido para dejar espacio para la barra */
         }
 
         /* Barra de tareas */
@@ -41,7 +42,7 @@
         .product-container {
             display: flex;
             flex-wrap: wrap;
-            margin: 80px auto; /* Ajusta el margen superior para evitar que se solape con la barra */
+            margin: 0 auto; /* Ajuste sin margen superior */
             max-width: 800px;
             padding: 20px;
             background-color: #ffffff;
@@ -56,6 +57,7 @@
             object-fit: cover;
             border-radius: 10px;
             margin-right: 20px;
+            margin-bottom: 20px; /* Añadido margen inferior */
         }
 
         /* Información del producto */
@@ -107,22 +109,26 @@
         <h2>Detalles del Producto</h2>
     </div>
 
-    <!-- Imagen del producto -->
-    <img class="product-image" src="imagen del producto.jpg" alt="Producto">
-        
+    <!-- Imagenes del producto -->
+    <div class="product-images">
+        <img class="product-image" src="echo-1.png" alt="Producto 1">
+        <img class="product-image" src="echo-2.png" alt="Producto 2">
+        <img class="product-image" src="echo-3.png" alt="Producto 3">
+        <img class="product-image" src="echo-4.png" alt="Producto 4">
+    </div>
+
     <!-- Información del producto -->
     <div class="product-info">
-        <h1>Nombre del Producto</h1>
-        <p>Aquí va la descripción detallada del producto. Explica las características y beneficios.</p>
-        <h2>€ 99.99</h2>
-        <a href="#" class="buy-button">Comprar ahora</a>
+        <h1>Echo Dot (5ª Generación)</h1>
+        <p>
+            Es un altavoz inteligente con una calidad de sonido espectacular. Se puede vincular a Alexa y tiene funciones de alarma, recordatorios, reproductor de música... Es el último de su generación y se puede controlar con el móvil.
+            Nosotros lo recomendamos debido a su gran variedad de usos y su compatibilidad para poder domotizar tu casa, sin duda es un aparato super útil en todas las casas.
+        </p>
+        <h2>50€ ahora 25€ por el Black Friday</h2>
+        <a href="https://amzn.to/4eGgKWn" class="buy-button">Comprar ahora</a>
     </div>
 
     <script>
-        // Colores
-        const primary_color = "#2C3E50";
-        const background_color = "#a4cffa";
-
         // Animación de aparición al cargar la página
         document.addEventListener("DOMContentLoaded", () => {
             document.body.style.opacity = "1";
