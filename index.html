@@ -106,6 +106,57 @@
         .action-button:hover {
             background-color: #D35400;
         }
+        /* Estilo para el contenedor de productos */
+        .product-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 40px 20px; /* Separación respecto a otros elementos */
+        }
+
+        /* Estilo para cada producto */
+        .product-item {
+            text-decoration: none; /* Quita subrayado de los enlaces */
+            color: var(--text-color); /* Usa el color principal del texto */
+            text-align: center; /* Centra el contenido */
+            width: 200px; /* Ancho fijo para cada producto */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación al pasar el ratón */
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Efecto al pasar el ratón por el producto */
+        .product-item:hover {
+            transform: translateY(-5px); /* Mueve hacia arriba ligeramente */
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+        }
+
+        /* Estilo de las imágenes */
+        .product-item img {
+            width: 100%; /* Imagen ocupa todo el ancho del contenedor */
+            height: 150px; /* Altura fija */
+            object-fit: cover; /* Recorta la imagen si es necesario */
+        }
+
+        /* Estilo para el título */
+        .product-item h3 {
+            font-size: 18px;
+            margin: 10px 0 5px;
+            color: var(--text-color);
+        }
+
+        /* Estilo para el precio */
+        .product-item p {
+            font-size: 16px;
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -125,6 +176,30 @@
         <h2>¿Qué vas a comprar hoy?</h2>
         <button class="action-button">Descubre más</button>
     </div>
+
+    <div class="product-grid">
+        <!-- Producto 1 -->
+        <a href="producto1.html" class="product-item">
+            <img src="producto1.jpg" alt="Producto 1">
+            <h3>Producto 1</h3>
+            <p>€29.99</p>
+        </a>
+    
+        <!-- Producto 2 -->
+        <a href="producto2.html" class="product-item">
+            <img src="producto2.jpg" alt="Producto 2">
+            <h3>Producto 2</h3>
+            <p>€49.99</p>
+        </a>
+    
+        <!-- Producto 3 -->
+        <a href="producto3.html" class="product-item">
+            <img src="producto3.jpg" alt="Producto 3">
+            <h3>Producto 3</h3>
+            <p>€19.99</p>
+        </a>
+    </div>
+    
 
     <script>
         // Animación de aparición al cargar la página
