@@ -29,8 +29,15 @@
             z-index: 1000;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: space-between; /* Esto coloca el logo a la izquierda y el texto al centro (si hay) */
+            align-items: center; /* Centra el contenido verticalmente */
+        }
+
+        /* Logo dentro de la barra de tareas */
+        .logo {
+            margin-top: 5px;
+            left: 10px; /* Posiciona el logo en la esquina izquierda */
+            height: 50px; /* Ajusta el tamaño del logo */
         }
 
         .options-bar h2 {
@@ -106,7 +113,10 @@
 <body>
     <!-- Barra de tareas -->
     <div class="options-bar">
-        <h2>Detalles del Producto</h2>
+        <!-- Logo como enlace a la página principal -->
+        <a href="locurasdeproductos.es">
+            <img class="logo" src="Logotipo locuras de productos blanco.png" alt="Logo Locuras de Productos">
+        </a>
     </div>
 
     <!-- Imagenes del producto -->
