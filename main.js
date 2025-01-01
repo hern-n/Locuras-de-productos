@@ -133,7 +133,10 @@ document.addEventListener("DOMContentLoaded", () => {
         { href: "soporte_bicicleta_caro/index.html", imgSrc: "soporte_bicicleta_caro/soporte_bicilceta_caro-1-agrandado.png", title: "Soporte para bici", price: "90€" }
     ];
 
-    products.forEach(product => {
+    for (let i = 0; i < products.length; i++) {
+
+        const product = products[i];
+        
         const productItem = document.createElement('a');
         productItem.href = product.href;
         productItem.className = 'product-item';
@@ -187,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
         productItem.appendChild(productTitle);
         productItem.appendChild(productPrice);
         productGrid.appendChild(productItem);
-    });
+    }
 
     document.body.appendChild(productGrid);
 });
