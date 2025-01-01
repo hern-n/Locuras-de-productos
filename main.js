@@ -125,72 +125,68 @@ document.addEventListener("DOMContentLoaded", () => {
         margin: 40px 20px;
     `;
 
-    const products = [
-        { href: "echo/index.html", imgSrc: "echo/echo-1 - ampliada.png", title: "Echo Dot (5ª generación)", price: "64€" },
-        { href: "kit_tenis/index.html", imgSrc: "kit_tenis/kit_tenis-5.png", title: "Kit de entrenamiento de tenis portátil", price: "17€" },
-        { href: "saco_boxeo/index.html", imgSrc: "saco_boxeo/saco_boxeo-agrandada.png", title: "Saco de boxeo de pie", price: "45€" },
-        { href: "soporte_bicicleta_barato/index.html", imgSrc: "soporte_bicicleta_barato/Soporte_bicicleta_barato-agrandado.png", title: "Soporte para bici", price: "20€" },
-        { href: "soporte_bicicleta_caro/index.html", imgSrc: "soporte_bicicleta_caro/soporte_bicilceta_caro-1-agrandado.png", title: "Soporte para bici", price: "90€" }
-    ];
+    // Fetch the JSON file (productos.json)
+    fetch("products.json",)
+        .then(response => response.json())  // Parse the JSON
+        .then(products => {
+            // Iterate over the products array
+            products.forEach(product => {
+                const productItem = document.createElement('a');
+                productItem.href = product.href;
+                productItem.className = 'product-item';
+                productItem.style.cssText = `
+                    text-decoration: none;
+                    color: #333333;
+                    text-align: center;
+                    width: 18%;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    border: 1px solid #BDC3C7;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    background-color: #fff;
+                    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                `;
+                productItem.addEventListener('mouseover', () => {
+                    productItem.style.transform = 'translateY(-5px)';
+                    productItem.style.boxShadow = '0px 8px 16px rgba(0, 0, 0, 0.2)';
+                });
+                productItem.addEventListener('mouseout', () => {
+                    productItem.style.transform = 'translateY(0)';
+                    productItem.style.boxShadow = '0px 4px 8px rgba(0, 0, 0, 0.1)';
+                });
 
-    for (let i = 0; i < products.length; i++) {
+                const productImage = document.createElement('img');
+                productImage.src = product.imgSrc;
+                productImage.alt = product.title;
+                productImage.style.cssText = `
+                    width: 100%;
+                    height: 150px;
+                    object-fit: cover;
+                `;
 
-        const product = products[i];
-        
-        const productItem = document.createElement('a');
-        productItem.href = product.href;
-        productItem.className = 'product-item';
-        productItem.style.cssText = `
-            text-decoration: none;
-            color: #333333;
-            text-align: center;
-            width: 18%;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #BDC3C7;
-            border-radius: 10px;
-            overflow: hidden;
-            background-color: #fff;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        `;
-        productItem.addEventListener('mouseover', () => {
-            productItem.style.transform = 'translateY(-5px)';
-            productItem.style.boxShadow = '0px 8px 16px rgba(0, 0, 0, 0.2)';
-        });
-        productItem.addEventListener('mouseout', () => {
-            productItem.style.transform = 'translateY(0)';
-            productItem.style.boxShadow = '0px 4px 8px rgba(0, 0, 0, 0.1)';
-        });
+                const productTitle = document.createElement('h3');
+                productTitle.textContent = product.title;
+                productTitle.style.cssText = `
+                    font-size: 18px;
+                    margin: 10px 0 5px;
+                `;
 
-        const productImage = document.createElement('img');
-        productImage.src = product.imgSrc;
-        productImage.alt = product.title;
-        productImage.style.cssText = `
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-        `;
+                const productPrice = document.createElement('p');
+                productPrice.textContent = product.price;
+                productPrice.style.cssText = `
+                    font-size: 16px;
+                    color: #E67E22;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                `;
 
-        const productTitle = document.createElement('h3');
-        productTitle.textContent = product.title;
-        productTitle.style.cssText = `
-            font-size: 18px;
-            margin: 10px 0 5px;
-        `;
+                productItem.appendChild(productImage);
+                productItem.appendChild(productTitle);
+                productItem.appendChild(productPrice);
+                productGrid.appendChild(productItem);
+            });
 
-        const productPrice = document.createElement('p');
-        productPrice.textContent = product.price;
-        productPrice.style.cssText = `
-            font-size: 16px;
-            color: #E67E22;
-            font-weight: bold;
-            margin-bottom: 10px;
-        `;
-
-        productItem.appendChild(productImage);
-        productItem.appendChild(productTitle);
-        productItem.appendChild(productPrice);
-        productGrid.appendChild(productItem);
-    }
-
-    document.body.appendChild(productGrid);
+            document.body.appendChild(productGrid);
+        })
+        .catch(error => console.log('Error loading JSON:', error));
 });
