@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     optionsBar.appendChild(helpButton);
     document.body.appendChild(optionsBar);
 
-    // Create the image container
+    // Create the image container del logo
     const imageContainer = document.createElement('div');
     imageContainer.className = 'image-container';
     imageContainer.style.cssText = `
