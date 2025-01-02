@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     optionsBar.appendChild(helpButton);
     document.body.appendChild(optionsBar);
 
-    // Create the image container del logo
+    // Create the image container for the logo
     const imageContainer = document.createElement('div');
     imageContainer.className = 'image-container';
     imageContainer.style.cssText = `
@@ -126,8 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
 
     // Fetch the JSON file (productos.json)
-    fetch("products.json",)
-        .then(response => response.json())  // Parse the JSON
+    fetch("products.json")
+        .then(response => response.json()) // Parse the JSON
         .then(products => {
             // Iterate over the products array
             products.forEach(product => {
@@ -185,6 +185,33 @@ document.addEventListener("DOMContentLoaded", () => {
                 productItem.appendChild(productPrice);
                 productGrid.appendChild(productItem);
             });
+
+            // Add "¡Pronto habrá más!" product
+            const finalItem = document.createElement('div'); // Div en vez de enlace
+            finalItem.className = 'product-item';
+            finalItem.style.cssText = `
+                text-decoration: none;
+                color: #333333;
+                text-align: center;
+                width: 18%;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                border: 1px solid #BDC3C7;
+                border-radius: 10px;
+                overflow: hidden;
+                background-color: #fff;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+            `;
+
+            const productTitle = document.createElement('h3');
+            productTitle.textContent = "¡Pronto habrá más!";
+            productTitle.style.cssText = `
+                font-size: 18px;
+                margin: 10px 0 5px;
+            `;
+
+            finalItem.appendChild(productTitle);
+            productGrid.appendChild(finalItem);
 
             document.body.appendChild(productGrid);
         })
