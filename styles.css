@@ -37,28 +37,35 @@ body {
     transform: scale(1.1);
 }
 
-/* Logo */
+/* Logo container and logo */
 .image-container {
-    margin-top: 90px;
+    max-width: 100%; /* Ajusta al tamaño del contenedor */
+    height: 300px; /* Altura del contenedor del logo */
+    margin-top: 90px; /* Separa el logo de la barra superior */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centra el logo horizontalmente */
+    align-items: center; /* Centra el logo verticalmente */
+    position: relative; /* Relativo para manejar hijos como .logo-image */
 }
 
 .logo-image {
-    width: 248px;
-    height: 205px;
-    transition: transform 0.3s ease;
+    position: relative; /* Mantiene el flujo normal */
+    width: 250px; /* Tamaño del logo ajustado */
+    height: auto; /* Mantiene la proporción del logo */
+    object-fit: cover; /* Ajusta el tamaño sin deformarlo */
+    z-index: 1; /* Asegura que esté visible */
+    opacity: 1; /* Opacidad completa */
+    transition: transform 0.3s ease; /* Animación al pasar el ratón */
 }
 
 .logo-image.hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Aumenta ligeramente al pasar el ratón */
 }
 
 /* Titles */
 .title-container {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .main-title {
@@ -120,4 +127,24 @@ body {
     color: #E67E22;
     font-weight: bold;
     margin-bottom: 10px;
+}
+
+/* Colores */
+#a4cffa { /* Azul claro */
+    background-color: #a4cffa;
+}
+#2C3E50 { /* Azul oscuro */
+    background-color: #2C3E50;
+}
+#FFFFFF { /* Blanco */
+    color: #FFFFFF;
+}
+#333333 { /* Gris oscuro */
+    color: #333333;
+}
+#E67E22 { /* Naranja */
+    color: #E67E22;
+}
+#BDC3C7 { /* Gris claro */
+    border-color: #BDC3C7;
 }
