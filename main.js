@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     imageContainer.className = 'image-container';
 
     const logoImage = document.createElement('img');
-    logoImage.src = "Fondo_y_logotipo.png";
+    logoImage.src = "Logotipo_locuras_de_productos.png";
     logoImage.alt = "Logotipo Locuras de Productos";
     logoImage.className = 'logo-image';
 
