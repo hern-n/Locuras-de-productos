@@ -18,8 +18,24 @@ document.addEventListener("DOMContentLoaded", () => {
         helpButton.classList.remove('hover');
     });
 
+    const logoButton = document.createElement('img');
+    logoButton.src = "Logotipo_locuras_de_productos_blanco.png";
+    logoButton.alt = "Logotipo Locuras de Productos";
+    logoButton.className = 'logo-button';
+
+    logoButton.addEventListener('mouseover', () => {
+        logoButton.classList.add('hover');
+    });
+    logoButton.addEventListener('mouseout', () => {
+        logoButton.classList.remove('hover');
+    });
+
     optionsBar.appendChild(helpButton);
+    optionsBar.appendChild(logoButton);
     document.body.appendChild(optionsBar);
+
+
+
 
     // Create the image container
     const imageContainer = document.createElement('div');
@@ -62,6 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
     titleContainer.appendChild(mainTitle);
     titleContainer.appendChild(subTitle);
     document.body.appendChild(titleContainer);
+
+
+
 
     // Create the product grid
     const productGrid = document.createElement('div');

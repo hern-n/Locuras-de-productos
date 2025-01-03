@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Tsukimi+Rounded&display=swap");
+
 /* General styles */
 body {
     background-color: #a4cffa;
@@ -7,8 +9,8 @@ body {
 
 /* Options bar */
 .options-bar {
-    background-color: #2C3E50;
-    color: #FFFFFF;
+    background-color: #2c3e50;
+    color: #ffffff;
     padding: 10px;
     position: fixed;
     top: 0;
@@ -18,9 +20,11 @@ body {
     z-index: 1000;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .help-button {
+    font-family: "Tsukimi Rounded", serif;
     margin-left: auto;
     margin-right: 20px;
     color: #fff;
@@ -37,29 +41,55 @@ body {
     transform: scale(1.1);
 }
 
+/* Logo dentro de la barra de tareas */
+.logo-button {
+    position: absolute; /* o relative */
+    left: 10px;
+    margin-top: 5px;
+    height: 50px;
+}
+
+.logo-button.hover{
+    transform: scale(1.1);
+}
+
 /* Logo container and logo */
 .image-container {
-    max-width: 100%; /* Ajusta al tamaño del contenedor */
-    height: 300px; /* Altura del contenedor del logo */
-    margin-top: 90px; /* Separa el logo de la barra superior */
+    max-width: 100%;
+    /* Ajusta al tamaño del contenedor */
+    height: 300px;
+    /* Altura del contenedor del logo */
+    margin-top: 90px;
+    /* Separa el logo de la barra superior */
     display: flex;
-    justify-content: center; /* Centra el logo horizontalmente */
-    align-items: center; /* Centra el logo verticalmente */
-    position: relative; /* Relativo para manejar hijos como .logo-image */
+    justify-content: center;
+    /* Centra el logo horizontalmente */
+    align-items: center;
+    /* Centra el logo verticalmente */
+    position: relative;
+    /* Relativo para manejar hijos como .logo-image */
 }
 
 .logo-image {
-    position: relative; /* Mantiene el flujo normal */
-    width: 250px; /* Tamaño del logo ajustado */
-    height: auto; /* Mantiene la proporción del logo */
-    object-fit: cover; /* Ajusta el tamaño sin deformarlo */
-    z-index: 1; /* Asegura que esté visible */
-    opacity: 1; /* Opacidad completa */
-    transition: transform 0.3s ease; /* Animación al pasar el ratón */
+    position: relative;
+    /* Mantiene el flujo normal */
+    width: 250px;
+    /* Tamaño del logo ajustado */
+    height: auto;
+    /* Mantiene la proporción del logo */
+    object-fit: cover;
+    /* Ajusta el tamaño sin deformarlo */
+    z-index: 1;
+    /* Asegura que esté visible */
+    opacity: 1;
+    /* Opacidad completa */
+    transition: transform 0.3s ease;
+    /* Animación al pasar el ratón */
 }
 
 .logo-image.hover {
-    transform: scale(1.1); /* Aumenta ligeramente al pasar el ratón */
+    transform: scale(1.1);
+    /* Aumenta ligeramente al pasar el ratón */
 }
 
 /* Titles */
@@ -69,16 +99,19 @@ body {
 }
 
 .main-title {
-    font-size: 36px;
+    font-family: "Tsukimi Rounded", serif;
+    font-weight: 800;
+    font-style: normal;
     color: #333333;
     transition: color 0.3s ease;
 }
 
 .main-title.hover {
-    color: #E67E22;
+    color: #e67e22;
 }
 
 .sub-title {
+    font-family: "Tsukimi Rounded", serif;
     margin-top: 10px;
     font-size: 24px;
     font-weight: normal;
@@ -99,7 +132,7 @@ body {
     text-align: center;
     width: 18%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #BDC3C7;
+    border: 1px solid #bdc3c7;
     border-radius: 10px;
     overflow: hidden;
     background-color: #fff;
@@ -118,33 +151,46 @@ body {
 }
 
 .product-title {
+    font-family: "Tsukimi Rounded", serif;
     font-size: 18px;
     margin: 10px 0 5px;
 }
 
 .product-price {
+    font-family: "Tsukimi Rounded", serif;
     font-size: 16px;
-    color: #E67E22;
+    color: #e67e22;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 /* Colores */
-#a4cffa { /* Azul claro */
+#a4cffa {
+    /* Azul claro */
     background-color: #a4cffa;
 }
-#2C3E50 { /* Azul oscuro */
-    background-color: #2C3E50;
+
+#2C3E50 {
+    /* Azul oscuro */
+    background-color: #2c3e50;
 }
-#FFFFFF { /* Blanco */
-    color: #FFFFFF;
+
+#FFFFFF {
+    /* Blanco */
+    color: #ffffff;
 }
-#333333 { /* Gris oscuro */
+
+#333333 {
+    /* Gris oscuro */
     color: #333333;
 }
-#E67E22 { /* Naranja */
-    color: #E67E22;
+
+#E67E22 {
+    /* Naranja */
+    color: #e67e22;
 }
-#BDC3C7 { /* Gris claro */
-    border-color: #BDC3C7;
+
+#BDC3C7 {
+    /* Gris claro */
+    border-color: #bdc3c7;
 }
