@@ -28,11 +28,5 @@
         "imgSrc": "soporte_bicicleta_caro/soporte_bicilceta_caro-1-agrandado.png",
         "title": "Soporte para bici",
         "price": "90€"
-    },
-    {
-        "href": "Prueba que esto funciona",
-        "imgSrc": "kit_tenis/kit_tenis-5.png",
-        "title":"Echo Dot (5ª generación)",
-        "price": "65€"
     }
 ]
