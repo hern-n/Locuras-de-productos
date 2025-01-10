@@ -180,7 +180,7 @@ body {
         padding: 5px 10px;
     }
     .logo-button{
-        width: 12px;
+        transform: scale(0.9);
     }
     .image-container {
         height: 150px;
