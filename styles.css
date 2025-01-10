@@ -43,53 +43,39 @@ body {
 
 /* Logo dentro de la barra de tareas */
 .logo-button {
-    position: absolute; /* o relative */
+    position: absolute;
     left: 10px;
     margin-top: 5px;
     height: 50px;
 }
 
-.logo-button.hover{
+.logo-button.hover {
     transform: scale(1.1);
 }
 
 /* Logo container and logo */
 .image-container {
     max-width: 100%;
-    /* Ajusta al tamaño del contenedor */
     height: 300px;
-    /* Altura del contenedor del logo */
     margin-top: 90px;
-    /* Separa el logo de la barra superior */
     display: flex;
     justify-content: center;
-    /* Centra el logo horizontalmente */
     align-items: center;
-    /* Centra el logo verticalmente */
     position: relative;
-    /* Relativo para manejar hijos como .logo-image */
 }
 
 .logo-image {
     position: relative;
-    /* Mantiene el flujo normal */
     width: 250px;
-    /* Tamaño del logo ajustado */
     height: auto;
-    /* Mantiene la proporción del logo */
     object-fit: cover;
-    /* Ajusta el tamaño sin deformarlo */
     z-index: 1;
-    /* Asegura que esté visible */
     opacity: 1;
-    /* Opacidad completa */
     transition: transform 0.3s ease;
-    /* Animación al pasar el ratón */
 }
 
 .logo-image.hover {
     transform: scale(1.1);
-    /* Aumenta ligeramente al pasar el ratón */
 }
 
 /* Titles */
@@ -164,33 +150,45 @@ body {
     margin-bottom: 10px;
 }
 
-/* Colores */
-#a4cffa {
-    /* Azul claro */
-    background-color: #a4cffa;
+/* Media Queries */
+
+/* Tablets (768px o menos) */
+@media (max-width: 768px) {
+    .product-item {
+        width: 45%; /* Dos columnas */
+    }
+    .image-container {
+        height: 200px;
+    }
+    .logo-image {
+        width: 200px;
+    }
 }
 
-#2C3E50 {
-    /* Azul oscuro */
-    background-color: #2c3e50;
-}
-
-#FFFFFF {
-    /* Blanco */
-    color: #ffffff;
-}
-
-#333333 {
-    /* Gris oscuro */
-    color: #333333;
-}
-
-#E67E22 {
-    /* Naranja */
-    color: #e67e22;
-}
-
-#BDC3C7 {
-    /* Gris claro */
-    border-color: #bdc3c7;
+/* Móviles (480px o menos) */
+@media (max-width: 480px) {
+    .product-item {
+        width: 100%; /* Una sola columna */
+    }
+    .options-bar {
+        height: auto;
+        flex-wrap: wrap;
+        padding: 10px 5px;
+    }
+    .help-button {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+    .image-container {
+        height: 150px;
+    }
+    .logo-image {
+        width: 150px;
+    }
+    .main-title {
+        font-size: 24px;
+    }
+    .sub-title {
+        font-size: 18px;
+    }
 }
