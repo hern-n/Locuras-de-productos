@@ -51,7 +51,7 @@ body {
 }
 
 .logo-button.hover {
-    transform: scale(0.8);
+    transform: scale(1.1);
 }
 
 /* Logo container and logo */
@@ -164,6 +164,12 @@ body {
     .logo-image {
         width: 200px;
     }
+    .logo-button{
+        transform: scale(0.8);
+    }
+    .logo-image.hover {
+        transform: scale(0.9);
+    }
 }
 
 /* Móviles (480px o menos) */
@@ -182,6 +188,9 @@ body {
     }
     .logo-button{
         transform: scale(0.7);
+    }
+    .logo-image.hover {
+        transform: scale(0.8);
     }
     .image-container {
         height: 150px;
