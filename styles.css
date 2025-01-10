@@ -179,6 +179,9 @@ body {
         font-size: 12px;
         padding: 5px 10px;
     }
+    .logo-button{
+        width: 12px;
+    }
     .image-container {
         height: 150px;
     }
