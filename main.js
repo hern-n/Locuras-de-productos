@@ -34,9 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     optionsBar.appendChild(logoButton);
     document.body.appendChild(optionsBar);
 
-
-
-
     // Create the image container
     const imageContainer = document.createElement('div');
     imageContainer.className = 'image-container';
@@ -79,10 +76,12 @@ document.addEventListener("DOMContentLoaded", () => {
     titleContainer.appendChild(subTitle);
     document.body.appendChild(titleContainer);
 
+    // Call the function to load products
+    loadProducts();
+});
 
-
-
-    // Create the product grid
+// Separate function to load products from JSON
+function loadProducts() {
     const productGrid = document.createElement('div');
     productGrid.className = 'product-grid';
 
@@ -129,4 +128,4 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.appendChild(productGrid);
         })
         .catch(error => console.log('Error loading JSON:', error));
-});
+}
