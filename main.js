@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
     optionsBar.appendChild(logoButton);
     document.body.appendChild(optionsBar);
 
+
+
     // Create the image container
     const imageContainer = document.createElement('div');
     imageContainer.className = 'image-container';
@@ -53,6 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
     imageContainer.appendChild(logoImage);
     document.body.appendChild(imageContainer);
 
+
+    
     // Create the title container
     const titleContainer = document.createElement('div');
     titleContainer.className = 'title-container';
