@@ -90,11 +90,11 @@ function loadProducts() {
         .then(response => response.text()) // Leer el CSV como texto
         .then(csvText => {
             const rows = csvText.trim().split("\n"); // Dividir en líneas
-            const headers = rows[0].split(","); // Extraer los encabezados (opcional)
+            const headers = rows[0].split(";"); // Extraer los encabezados (opcional)
 
             // Iterar sobre las filas, ignorando la primera (encabezados)
             rows.slice(1).forEach(row => {
-                const [title, href, imgSrc, price] = row.split(","); // Dividir columnas
+                const [title, href, imgSrc, price] = row.split(";"); // Dividir columnas
 
                 // Crear elementos HTML para cada producto
                 const productItem = document.createElement('a');
