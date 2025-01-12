@@ -85,27 +85,33 @@ function loadProducts() {
     const productGrid = document.createElement('div');
     productGrid.className = 'product-grid';
 
-    // Fetch the JSON file (productos.json)
-    fetch("products.json")
-        .then(response => response.json()) // Parse the JSON
-        .then(products => {
-            // Iterate over the products array
-            products.forEach(product => {
+    // Fetch the CSV file (products.csv)
+    fetch("products.csv")
+        .then(response => response.text()) // Leer el CSV como texto
+        .then(csvText => {
+            const rows = csvText.trim().split("\n"); // Dividir en líneas
+            const headers = rows[0].split(","); // Extraer los encabezados (opcional)
+
+            // Iterar sobre las filas, ignorando la primera (encabezados)
+            rows.slice(1).forEach(row => {
+                const [title, href, imgSrc, price] = row.split(","); // Dividir columnas
+
+                // Crear elementos HTML para cada producto
                 const productItem = document.createElement('a');
-                productItem.href = product.href;
+                productItem.href = href;
                 productItem.className = 'product-item';
 
                 const productImage = document.createElement('img');
-                productImage.src = product.imgSrc;
-                productImage.alt = product.title;
+                productImage.src = imgSrc;
+                productImage.alt = title;
                 productImage.className = 'product-image';
 
                 const productTitle = document.createElement('h3');
-                productTitle.textContent = product.title;
+                productTitle.textContent = title;
                 productTitle.className = 'product-title';
 
                 const productPrice = document.createElement('p');
-                productPrice.textContent = product.price;
+                productPrice.textContent = price;
                 productPrice.className = 'product-price';
 
                 productItem.appendChild(productImage);
@@ -114,7 +120,7 @@ function loadProducts() {
                 productGrid.appendChild(productItem);
             });
 
-            // Add a "Coming Soon" item
+            // Agregar un elemento "Pronto habrá más"
             const finalItem = document.createElement('a');
             finalItem.className = 'product-item';
 
@@ -127,5 +133,6 @@ function loadProducts() {
 
             document.body.appendChild(productGrid);
         })
-        .catch(error => console.log('Error loading JSON:', error));
+        .catch(error => console.log('Error loading CSV:', error));
 }
+
