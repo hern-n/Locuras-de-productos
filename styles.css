@@ -219,6 +219,12 @@ body {
         width: 50%;
         height: auto;
     }
+    .help-button{
+        transform: scale(0.8);
+    }
+    .help-button.hover{
+        transform: scale(0.9);
+    }
 }
 
 /* Móviles (480px o menos) */
@@ -256,5 +262,11 @@ body {
     .search-bar{
         width: 50%;
         height: auto;
+    }
+    .help-button{
+        transform: scale(0.7);
+    }
+    .help-button.hover{
+        transform: scale(0.8);
     }
 }
