@@ -249,4 +249,8 @@ body {
     .sub-title {
         font-size: 18px;
     }
+    .search-bar{
+        width: 50%;
+        height: auto;
+    }
 }
