@@ -215,6 +215,10 @@ body {
     .logo-image.hover {
         transform: scale(0.9);
     }
+    .search-bar{
+        width: 50%;
+        height: auto;
+    }
 }
 
 /* Móviles (480px o menos) */
