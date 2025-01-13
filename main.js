@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const helpButton = document.createElement("a");
     helpButton.href = "ayuda/index.html";
     helpButton.className = "help-button";
-    helpButton.textContent = "¿Necesitas ayuda?";
+    helpButton.textContent = "¿Necesitas\n ayuda?";
 
     helpButton.addEventListener("mouseover", () => {
         helpButton.classList.add("hover");
