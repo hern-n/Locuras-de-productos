@@ -33,12 +33,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 window.exported_result = search_result; 
                 window.exported_names = exported_names;
                 console.log(exported_names);
+
+                window.location.href = "busqueda/index.html";
                 } 
             else{
                 console.log("No se han encontrado resultados");
                 window.exported_result = [];  // Dejar el resultado vacío
                 window.exported_names = exported_names;
                 console.log(exported_names);
+
+                window.location.href = "busqueda/index.html";
                 }
         }
     });
