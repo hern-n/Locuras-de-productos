@@ -11,10 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     searchBar.className = "search-bar";
     searchBar.onsubmit = function(event) {
         event.preventDefault(); // Evitar el envío del formulario
-
-        var query = input.value;
-        // Mostrar el dato almacenado en la consola
-        console.log(`Búsqueda: ${query}`);
     };
 
     const input = document.createElement("input");
@@ -24,15 +20,31 @@ document.addEventListener("DOMContentLoaded", () => {
     input.required = true;
     input.placeholder = "¿Qué quieres empezar a buscar?"; // Texto de ayuda
 
-    // Detectar "Enter" al escribir en el campo
-    input.addEventListener("keydown", function(event) {
+    input.addEventListener("keydown", async function(event) {
         if (event.key === "Enter") {
-        
+            event.preventDefault(); // Evitar comportamiento por defecto
+
+            const names = await getNameProducts(); // Asegurarte de esperar los nombres
+            const search_result = findSimilarItems(names, input.value); // Usa input.value directamente
+            let exported_names = input.value;
+
+            if (search_result.length > 0) {
+                console.log(search_result); // Mostrar resultados
+                window.exported_result = search_result; 
+                window.exported_names = exported_names;
+                console.log(exported_names);
+                } 
+            else{
+                console.log("No se han encontrado resultados");
+                window.exported_result = [];  // Dejar el resultado vacío
+                window.exported_names = exported_names;
+                console.log(exported_names);
+                }
         }
     });
+    
 
     searchBar.appendChild(input);
-    optionsBar.appendChild(searchBar);
 
     const helpButton = document.createElement("a");
     helpButton.href = "ayuda/index.html";
@@ -58,9 +70,12 @@ document.addEventListener("DOMContentLoaded", () => {
         logoButton.classList.remove("hover");
     });
 
-    optionsBar.appendChild(helpButton);
-    optionsBar.appendChild(logoButton);
+// Reorganizar elementos en la barra de opciones
+    optionsBar.appendChild(logoButton); // El logo aparece primero
+    optionsBar.appendChild(searchBar); // Luego la barra de búsqueda
+    optionsBar.appendChild(helpButton); // Finalmente el botón de ayuda
     document.body.appendChild(optionsBar);
+
 
     // Create the image container
     const imageContainer = document.createElement("div");
