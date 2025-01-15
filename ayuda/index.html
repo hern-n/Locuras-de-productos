@@ -115,6 +115,40 @@
             max-width: 200px;
         }
 
+        /* Media Queries */
+        @media (max-width: 1024px) {
+            .main-container {
+                flex-direction: column;  /* Cambiar dirección a columna */
+                padding: 40px;          /* Ajustar padding */
+            }
+
+            .text-container, .right-content {
+                max-width: 100%;        /* Que ambos contenedores ocupen el 100% */
+            }
+
+            .social-media-container {
+                gap: 5px;  /* Menor espacio entre elementos */
+            }
+
+            .right-content img.logo {
+                max-width: 30px;  /* Ajustar tamaño de imágenes */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 20px;          /* Ajustar padding */
+            }
+
+            .text-container h1 {
+                font-size: 28px;  /* Disminuir tamaño del texto */
+            }
+
+            .text-container h2 {
+                font-size: 18px;
+            }
+        }
+
     </style>
 </head>
 <body>

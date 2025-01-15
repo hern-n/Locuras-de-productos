@@ -163,3 +163,27 @@ function loadProducts() {
         })
         .catch(error => console.log("Error loading CSV:", error));
 }
+
+//Función para obtener una lista con todos los nombres de los productos
+async function getNameProducts() {
+    let names = [];
+
+    // Cargar el archivo CSV
+    const response = await fetch("products.csv");
+    const csvText = await response.text();
+
+    // Procesar las líneas del CSV
+    const rows = csvText.trim().split("\n");
+
+    // Iterar sobre las filas, ignorando la primera línea (encabezados)
+    rows.slice(1).forEach(row => {
+        const [title] = row.split(";"); // Extraer el primer elemento (nombre del producto)
+        names.push(title); // Agregarlo a la lista
+    });
+
+    return names; // Devolver los nombres
+}
+
+function findSimilarItems(array, searchTerm) {
+    return array.filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()));
+}
