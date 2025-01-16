@@ -25,6 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
     
     optionsBar.appendChild(logoButton);
     document.body.appendChild(optionsBar); 
+
+
+    updates = updateDataSearch()
+
+    console.log(updates[0]);
+    console.log(updates[1]);
 });
 
 
