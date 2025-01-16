@@ -192,6 +192,10 @@ function loadProducts() {
 
 initialScreen();
 
+
+
+
+
 //Función para obtener una lista con todos los nombres de los productos
 async function getNameProducts() {
     let names = [];
