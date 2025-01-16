@@ -35,8 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 async function updateDataSearch(){
-    let name_product = window.exported_names;
-    let possible_products = window.exported_result;
+    let name_product = sessionStorage.getItem("exported_names");
+    let possible_products = JSON.parse(sessionStorage.getItem("exported_result"));
+
 
     return [name_product, possible_products]; // Devuelve un array
 }

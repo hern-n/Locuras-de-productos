@@ -22,30 +22,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     input.addEventListener("keydown", async function(event) {
         if (event.key === "Enter") {
-            event.preventDefault(); // Evitar comportamiento por defecto
-
-            const names = await getNameProducts(); // Asegurarte de esperar los nombres
-            const search_result = findSimilarItems(names, input.value); // Usa input.value directamente
-            let exported_names = input.value;
-
-            if (search_result.length > 0) {
-                console.log(search_result); // Mostrar resultados
-                window.exported_result = search_result; 
-                window.exported_names = exported_names;
-                console.log(exported_names);
-
-                window.location.href = "busqueda/index.html";
-                } 
-            else{
-                console.log("No se han encontrado resultados");
-                window.exported_result = [];  // Dejar el resultado vacío
-                window.exported_names = exported_names;
-                console.log(exported_names);
-
-                window.location.href = "busqueda/index.html";
-                }
+            event.preventDefault();
+    
+            const names = await getNameProducts();
+            const search_result = findSimilarItems(names, input.value);
+    
+            // Guardar en sessionStorage
+            sessionStorage.setItem("exported_names", input.value);
+            sessionStorage.setItem("exported_result", JSON.stringify(search_result));
+    
+            window.location.href = "busqueda/index.html";
         }
     });
+    
     
 
     searchBar.appendChild(input);
