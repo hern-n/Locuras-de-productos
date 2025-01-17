@@ -173,7 +173,7 @@ function searchScreen() {
     imageContainer.className = "image-container";
 
     const maintenanceText = document.createElement("h1");
-    maintenanceText.textContent = "De momento esta sección no está acabada. Cuando la acabemos, pordás ver aquí los resultados de tu bésqueda. ;)";
+    maintenanceText.textContent = "De momento esta sección no está acabada. Cuando la acabemos, pordás ver aquí los resultados de tu búsqueda. ;)";
     maintenanceText.className = "main-title"; // Corregido el uso de la clase
 
     imageContainer.appendChild(maintenanceText);
