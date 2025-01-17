@@ -33,6 +33,7 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.3s ease;
+    word-wrap: break-word; /* Permite que las palabras largas se ajusten */
 }
 
 .help-button.hover {
