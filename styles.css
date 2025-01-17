@@ -257,7 +257,7 @@ body {
         font-size: 18px;
     }
     .search-bar {
-        width: 80%; /* Ajustar el ancho de la barra de búsqueda */
+        width: 50%; /* Ajustar el ancho de la barra de búsqueda */
         height: auto;
     }
     .help-button {
