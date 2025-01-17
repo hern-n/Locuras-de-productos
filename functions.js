@@ -1,6 +1,6 @@
-export function loadProducts(type_grid = "product-grid", type_item = "product-item", final_product = true) {
+export function loadProducts() {
     const productGrid = document.createElement("div");
-    productGrid.className = type_grid;
+    productGrid.className = "product-grid";
 
     // Fetch the CSV file (products.csv)
     fetch("products.csv")
@@ -16,7 +16,7 @@ export function loadProducts(type_grid = "product-grid", type_item = "product-it
                 // Crear elementos HTML para cada producto
                 const productItem = document.createElement("a");
                 productItem.href = href;
-                productItem.className = type_item;
+                productItem.className = "product-item";
 
                 const productImage = document.createElement("img");
                 productImage.src = imgSrc;
@@ -37,20 +37,18 @@ export function loadProducts(type_grid = "product-grid", type_item = "product-it
                 productGrid.appendChild(productItem);
             });
 
-            if (final_product){
-                // Agregar un elemento "Pronto habrá más"
-                const finalItem = document.createElement("a");
-                finalItem.className = type_item;
+        // Agregar un elemento "Pronto habrá más"
+        const finalItem = document.createElement("a");
+        finalItem.className = "product-item";
 
-                const finalTitle = document.createElement("h3");
-                finalTitle.textContent = "¡Pronto habrá más!";
-                finalTitle.className = "product-title";
+        const finalTitle = document.createElement("h3");
+        finalTitle.textContent = "¡Pronto habrá más!";
+        finalTitle.className = "product-title";
 
-                finalItem.appendChild(finalTitle);
-                productGrid.appendChild(finalItem);
-            }
+        finalItem.appendChild(finalTitle);
+        productGrid.appendChild(finalItem);
 
-            document.body.appendChild(productGrid);
+        document.body.appendChild(productGrid);
         })
         .catch(error => console.log("Error loading CSV:", error));
 };
