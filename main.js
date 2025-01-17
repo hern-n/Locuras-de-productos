@@ -133,6 +133,35 @@ function initialScreen() {
     loadProducts();
 };
 
+function searchScrean(){
+    // Limpiar el DOM (en caso de que ya haya contenido)
+    document.body.innerHTML = "";
+
+    // Set the document title
+    document.title = "Buscador de Productos";
+
+    // Create the options bar
+    const optionsBar = document.createElement("div");
+    optionsBar.className = "options-bar";
+
+    //Crear el logo
+    const logoButton = document.createElement("img");
+    logoButton.src = "Logotipo_locuras_de_productos_blanco.png";
+    logoButton.alt = "Logotipo Locuras de Productos";
+    logoButton.className = "logo-button";
+
+    logoButton.addEventListener("mouseover", () => {
+        logoButton.classList.add("hover");
+    });
+    logoButton.addEventListener("mouseout", () => {
+        logoButton.classList.remove("hover");
+    });
+
+    // Reorganizar elementos en la barra de opciones
+    optionsBar.appendChild(logoButton); // El logo aparece primero
+    document.body.appendChild(optionsBar);
+}
+
 
 
 
