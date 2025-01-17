@@ -44,13 +44,13 @@ function initialScreen() {
                 console.log(search_result); // Mostrar resultados
                 console.log(exported_names);
 
-                //window.location.href = "busqueda/index.html";
+                searchScreen();
             }
             else {
                 console.log("No se han encontrado resultados");
                 console.log(exported_names);
 
-                //window.location.href = "busqueda/index.html";
+                searchScreen();
             }
         }
     });
@@ -135,23 +135,28 @@ function initialScreen() {
     loadProducts();
 };
 
-function searchScrean(){
+function searchScreen() {
     // Limpiar el DOM (en caso de que ya haya contenido)
     document.body.innerHTML = "";
 
-    // Set the document title
+    // Establecer el título del documento
     document.title = "Buscador de Productos";
 
-    // Create the options bar
+    // Crear la barra de opciones
     const optionsBar = document.createElement("div");
     optionsBar.className = "options-bar";
 
-    //Crear el logo
+    // Crear el link del logo - botón
+    const logoLink = document.createElement("a");
+    logoLink.href = "http://www.locurasdeproductos.es";
+
+    // Crear el logo (la imagen)
     const logoButton = document.createElement("img");
     logoButton.src = "Logotipo_locuras_de_productos_blanco.png";
     logoButton.alt = "Logotipo Locuras de Productos";
     logoButton.className = "logo-button";
 
+    // Añadir eventos para hover
     logoButton.addEventListener("mouseover", () => {
         logoButton.classList.add("hover");
     });
@@ -159,7 +164,18 @@ function searchScrean(){
         logoButton.classList.remove("hover");
     });
 
-    // Reorganizar elementos en la barra de opciones
-    optionsBar.appendChild(logoButton); // El logo aparece primero
+    logoLink.appendChild(logoButton);
+    optionsBar.appendChild(logoLink);
     document.body.appendChild(optionsBar);
+
+    //DE momento, no hay productos disonobles, mensaje ara los que se encuentren esta pantalla
+    const imageContainer = document.createElement("div");
+    imageContainer.className = "image-container";
+
+    const maintenanceText = document.createElement("h1");
+    maintenanceText.textContent = "De momento esta sección no está acabada. Cuando la acabemos, pordás ver aquí los resultados de tu bésqueda. ;)";
+    maintenanceText.className = "main-title"; // Corregido el uso de la clase
+
+    imageContainer.appendChild(maintenanceText);
+    document.body.appendChild(imageContainer);
 }
