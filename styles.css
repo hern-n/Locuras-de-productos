@@ -257,7 +257,7 @@ body {
         width: 100%;
     }
     
-    /*.image-container{
-        margin: 400px 0;
-    }*/
+    .image-container{
+        margin: 200px 0;
+    }
 }
