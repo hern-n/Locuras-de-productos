@@ -1,5 +1,4 @@
 import { loadProducts, getNameProducts, findSimilarItems, loadSearchedProducts } from "./functions.js";
-import { Analytics } from "@vercel/analytics/react";
 
 // Variables globales
 let search_result = [];
