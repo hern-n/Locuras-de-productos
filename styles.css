@@ -198,6 +198,60 @@ body {
     background-color: #34495e;
 }
 
+/* Estilo específico para el grid de la pantalla de búsqueda */
+.search-grid {
+    display: block; /* Los elementos ocuparán toda la línea */
+    margin: 20px;
+}
+
+.search-item {
+    display: flex; /* Usamos flexbox para alinear la imagen y el contenido horizontalmente */
+    align-items: center;
+    text-decoration: none;
+    color: #333333;
+    border: 1px solid #bdc3c7;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.search-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.search-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover; /* La imagen mantiene su proporción */
+    border-radius: 5px;
+    margin-right: 20px; /* Espacio entre la imagen y el contenido */
+}
+
+.search-content {
+    display: flex;
+    flex-direction: column; /* Alinear título y precio verticalmente */
+}
+
+.search-title {
+    font-family: "Tsukimi Rounded", serif;
+    font-size: 18px;
+    margin: 0 0 10px;
+    color: #333333;
+}
+
+.search-price {
+    font-family: "Tsukimi Rounded", serif;
+    font-size: 16px;
+    color: #e67e22;
+    font-weight: bold;
+}
+
+
 /* Media Queries */
 
 /* Tablets (768px o menos) */
