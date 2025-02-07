@@ -16,39 +16,14 @@ function initialScreen() {
     // Título del documento
     document.title = "Locuras de Productos";
 
-    // Barra de opciones
-    const optionsBar = document.createElement("div");
-    optionsBar.className = "options-bar";
-
-    // Logo ( boton en otras páginas)
-    const logoButton = document.createElement("img");
-    logoButton.src = "Logotipo_locuras_de_productos_blanco.png";
-    logoButton.alt = "Logotipo Locuras de Productos";
-    logoButton.className = "logo-button";
-    addHoverEffect(logoButton);
-    optionsBar.appendChild(logoButton);
-
-    // Barra de búsqueda
-    const searchBar = createSearchBar();
-    optionsBar.appendChild(searchBar);
-
-    // Botón de ayuda
-    const helpButton = document.createElement("a");
-    helpButton.href = "ayuda/index.html";
-    helpButton.className = "help-button";
-    helpButton.textContent = "¿Necesitas\n ayuda?";
-    addHoverEffect(helpButton);
-    optionsBar.appendChild(helpButton);
-
-    document.body.appendChild(optionsBar);
+    // Barra de tareas (incluye logo, barra de búsqueda y botón de ayuda)
+    document.body.appendChild(createTaskBar());
 
     // Contenedor de imagen principal
-    const imageContainer = createImageContainer();
-    document.body.appendChild(imageContainer);
+    document.body.appendChild(createImageContainer());
 
     // Título principal
-    const titleContainer = createTitleContainer();
-    document.body.appendChild(titleContainer);
+    document.body.appendChild(createTitleContainer());
 
     // Cargar productos
     loadProducts();
@@ -61,7 +36,29 @@ function searchScreen() {
     // Título del documento
     document.title = "Buscador de Productos";
 
-    // Barra de opciones
+    // Barra de tareas (incluye logo, barra de búsqueda y botón de ayuda)
+    document.body.appendChild(createTaskBar());
+
+    // Mostrar resultados
+    const imageContainer = document.createElement("div");
+    imageContainer.className = "image-container";
+
+    const maintenanceText = document.createElement("h1");
+    maintenanceText.textContent = search_result.length > 0 
+        ? `Resultados de búsqueda para "${exported_names}"`
+        : `No se han encontrado resultados para "${exported_names}"`;
+
+    maintenanceText.className = "sub-title";
+    imageContainer.appendChild(maintenanceText);
+    document.body.appendChild(imageContainer);
+
+    if (search_result.length > 0) {
+        loadSearchedProducts(search_result);
+    }
+}
+
+// Función para crear la barra de tareas (logo, barra de búsqueda y botón de ayuda)
+function createTaskBar() {
     const optionsBar = document.createElement("div");
     optionsBar.className = "options-bar";
 
@@ -74,9 +71,8 @@ function searchScreen() {
     logoButton.addEventListener("click", () => initialScreen());
     optionsBar.appendChild(logoButton);
 
-    // Barra de búsqueda
-    const searchBar = createSearchBar();
-    optionsBar.appendChild(searchBar);
+    // Agregar la barra de búsqueda
+    optionsBar.appendChild(createSearchBar());
 
     // Botón de ayuda
     const helpButton = document.createElement("a");
@@ -86,30 +82,10 @@ function searchScreen() {
     addHoverEffect(helpButton);
     optionsBar.appendChild(helpButton);
 
-    document.body.appendChild(optionsBar);
-
-    // Mostrar resultados
-    const imageContainer = document.createElement("div");
-    imageContainer.className = "image-container";
-
-    const maintenanceText = document.createElement("h1");
-    if (search_result.length > 0) {
-        maintenanceText.textContent = `Resultados de búsqueda para "${exported_names}"`;
-    } else {
-        maintenanceText.textContent = `No se han encontrado resultados para "${exported_names}"`;
-    }
-    maintenanceText.className = "sub-title";
-
-    imageContainer.appendChild(maintenanceText);
-    document.body.appendChild(imageContainer);
-
-    if (search_result.length > 0) {
-        loadSearchedProducts(search_result);
-    }
+    return optionsBar;
 }
 
-
-// Funciones auxiliares
+// Función para crear la barra de búsqueda
 function createSearchBar() {
     const searchBar = document.createElement("form");
     searchBar.className = "search-bar";
@@ -141,6 +117,7 @@ function createSearchBar() {
     return searchBar;
 }
 
+// Funciones auxiliares
 function createImageContainer() {
     const imageContainer = document.createElement("div");
     imageContainer.className = "image-container";
