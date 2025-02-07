@@ -65,17 +65,27 @@ function searchScreen() {
     const optionsBar = document.createElement("div");
     optionsBar.className = "options-bar";
 
-    const logoLink = document.createElement("a");
-    logoLink.href = "http://www.locurasdeproductos.es";
-
+    // Logo (botón para volver a la pantalla inicial)
     const logoButton = document.createElement("img");
     logoButton.src = "Logotipo_locuras_de_productos_blanco.png";
     logoButton.alt = "Logotipo Locuras de Productos";
     logoButton.className = "logo-button";
     addHoverEffect(logoButton);
+    logoButton.addEventListener("click", () => initialScreen());
+    optionsBar.appendChild(logoButton);
 
-    logoLink.appendChild(logoButton);
-    optionsBar.appendChild(logoLink);
+    // Barra de búsqueda
+    const searchBar = createSearchBar();
+    optionsBar.appendChild(searchBar);
+
+    // Botón de ayuda
+    const helpButton = document.createElement("a");
+    helpButton.href = "ayuda/index.html";
+    helpButton.className = "help-button";
+    helpButton.textContent = "¿Necesitas\n ayuda?";
+    addHoverEffect(helpButton);
+    optionsBar.appendChild(helpButton);
+
     document.body.appendChild(optionsBar);
 
     // Mostrar resultados
@@ -97,6 +107,7 @@ function searchScreen() {
         loadSearchedProducts(search_result);
     }
 }
+
 
 // Funciones auxiliares
 function createSearchBar() {
